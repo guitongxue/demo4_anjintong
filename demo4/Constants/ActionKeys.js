@@ -1,0 +1,5 @@
+module.exports = {
+	ADD:'ACTION_ADD',
+	DELETE:'ACTION_DELETE',
+	ALL:'ACTION_SHOWALL'
+}

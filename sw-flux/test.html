@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>React 实例</title>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/react-0.14.7/build/react-dom.min.js"></script>
+    <script src="http://static.runoob.com/assets/react/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+    var HelloMessage = React.createClass({
+      getInitialState: function() {
+        return {value: 'Hello!'};
+      },
+      handleChange: function(event) {
+        this.setState({value: event.target.value});
+      },
+      render: function() {
+        var value = this.state.value;
+        return <div>
+                <input type="text" value={value} onChange={this.handleChange} />  
+               </div>;
+      }
+    });
+    var Button = React.createClass({
+	    getInitialState: function () {
+	    	return {value: 'Submit'};
+	    },
+		_onChange: function () {
+		    this.setState({
+		      items: this.state.items
+		    });
+		},
+	    
+        render: function() {
+     		var items = props.items;
+			var itemHtml = items.map(function (listItem, i) {
+			    return <li key={i}>{listItem}</li>;
+			});
+		    return 	<div>		   
+					    <button>{this.state.value}</button>
+					</div>;
+	  },
+    });
+
+    ReactDOM.render(
+<div>
+      <HelloMessage />
+      <Button />
+</div>
+
+      ,
+      document.getElementById('example')
+    );
+    </script>
+  </body>
+</html>
